@@ -1,6 +1,6 @@
 # dlssfg-fps
 
-Command line app for Windows to toggle Nvidia's DLSS-FG MFG Target FPS. Based on: https://github.com/FrogTheFrog/frl-toggle
+Command line app for Windows to toggle Nvidia's DLSS Dynamic MFG Target FPS. Based on: https://github.com/FrogTheFrog/frl-toggle
 
 # How to use
 
