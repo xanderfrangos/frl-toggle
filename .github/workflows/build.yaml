@@ -27,15 +27,11 @@ jobs:
       - name: Build
         run: cmake --build build
 
-      - name: Rename
-        working-directory: ./build/src
-        run: mv frltoggle.exe ${{ needs.Filename.outputs.filename }}.exe
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: ./build/src/frltoggle*exe
+          path: ./build/src/dlssfg-fps*exe
           retention-days: 60
           if-no-files-found: error
         
