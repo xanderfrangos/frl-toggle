@@ -3,9 +3,9 @@
 #----------------------------------------------------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.27)
-project(frltoggle 
-        VERSION 1.2.0
-        DESCRIPTION "Command line app for Windows to toggle Nvidia's Frame Rate Limiter."
+project(dlssfg-fps 
+        VERSION 1.0.0
+        DESCRIPTION "Command line app for Windows to toggle Nvidia's DLSS-FG MFG Target FPS."
         HOMEPAGE_URL "https://github.com/FrogTheFrog/frl-toggle"
         LANGUAGES C CXX)
 
