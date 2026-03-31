@@ -1,4 +1,4 @@
-# frl-toggle ![Status](https://github.com/FrogTheFrog/frl-toggle/actions/workflows/publish.yaml/badge.svg)
+# frl-toggle
 
 App for Windows to toggle Nvidia's Frame Rate Limiter (FRL) via command line
 
