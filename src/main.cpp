@@ -256,7 +256,7 @@ int main(int argc, char** argv)
         // Handle special case of getting settings
         {
             NvU32      retrieved_value{FRL_FPS_DEFAULT};
-            const auto status{nvapi.DRS_GetSetting(drs_session, drs_profile, FRL_FPS_ID, &drs_setting)};
+            const auto status{nvapi.DRS_GetSetting(drs_session, drs_profile, 273507943, &drs_setting)};
             if (status != NVAPI_SETTING_NOT_FOUND)
             {
                 assertSuccess(status, "Failed to get FRL setting!");
@@ -265,7 +265,7 @@ int main(int argc, char** argv)
 
             drs_setting                 = {};
             drs_setting.version         = NVDRS_SETTING_VER;
-            drs_setting.settingId       = FRL_FPS_ID;
+            drs_setting.settingId       = 273507943;
             drs_setting.settingType     = NVDRS_DWORD_TYPE;
             drs_setting.settingLocation = NVDRS_CURRENT_PROFILE_LOCATION;
             drs_setting.u32CurrentValue = retrieved_value;
