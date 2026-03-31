@@ -223,11 +223,11 @@ int main(int argc, char** argv)
             // clang-format off
             std::cout << std::endl;
             std::cout << "  Usage example:" << std::endl;
-            std::cout << "    dlssfg-fps status                          prints the current FPS target. Value " << FRL_FPS_DISABLED << " means it's disabled." << std::endl;
-            std::cout << "    dlssfg-fps " << FRL_FPS_DISABLED << "                               turns off the framerate target." << std::endl;
+            std::cout << "    dlssfg-fps status                          prints the current MFG FPS target. Value " << FRL_FPS_DISABLED << " means it's disabled." << std::endl;
+            std::cout << "    dlssfg-fps " << FRL_FPS_DISABLED << "                               turns off the MFG FPS target." << std::endl;
             std::cout << "    dlssfg-fps 120                             sets the FPS target to 120 (allowed values are [" << FRL_FPS_MIN <<  ", " << FRL_FPS_MAX << "])." << std::endl;
-            std::cout << "    dlssfg-fps 120 --save-previous             sets the FPS limit to 120 and saves the previous value to a file." << std::endl;
-            std::cout << "    dlssfg-fps 120 --save-previous-or-reuse    sets the FPS limit to 120 and saves the previous value to a file." << std::endl << 
+            std::cout << "    dlssfg-fps 120 --save-previous             sets the FPS target to 120 and saves the previous value to a file." << std::endl;
+            std::cout << "    dlssfg-fps 120 --save-previous-or-reuse    sets the FPS target to 120 and saves the previous value to a file." << std::endl << 
                          "                                               If the file already exists, its value will be validated and reused instead." << std::endl <<
                          "                                               This is useful in case the system has crashed and we want to reuse the value from before the crash." << std::endl;
             std::cout << "    dlssfg-fps load-file                       loads the value from file (e.g., saved using \"--save-previous\") and uses it to set the target." << std::endl << 
