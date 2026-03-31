@@ -223,14 +223,14 @@ int main(int argc, char** argv)
             // clang-format off
             std::cout << std::endl;
             std::cout << "  Usage example:" << std::endl;
-            std::cout << "    frltoggle status                          prints the current FRL value. Value " << FRL_FPS_DISABLED << " means it's disabled." << std::endl;
-            std::cout << "    frltoggle " << FRL_FPS_DISABLED << "                               turns off the framerate limiter." << std::endl;
-            std::cout << "    frltoggle 60                              sets the FPS limit to 60 (allowed values are [" << FRL_FPS_MIN <<  ", " << FRL_FPS_MAX << "])." << std::endl;
-            std::cout << "    frltoggle 60 --save-previous              sets the FPS limit to 60 and saves the previous value to a file." << std::endl;
-            std::cout << "    frltoggle 60 --save-previous-or-reuse     sets the FPS limit to 60 and saves the previous value to a file." << std::endl << 
+            std::cout << "    dlssfg-fps status                          prints the current FPS target. Value " << FRL_FPS_DISABLED << " means it's disabled." << std::endl;
+            std::cout << "    dlssfg-fps " << FRL_FPS_DISABLED << "                               turns off the framerate target." << std::endl;
+            std::cout << "    dlssfg-fps 120                              sets the FPS target to 120 (allowed values are [" << FRL_FPS_MIN <<  ", " << FRL_FPS_MAX << "])." << std::endl;
+            std::cout << "    dlssfg-fps 120 --save-previous              sets the FPS limit to 120 and saves the previous value to a file." << std::endl;
+            std::cout << "    dlssfg-fps 120 --save-previous-or-reuse     sets the FPS limit to 120 and saves the previous value to a file." << std::endl << 
                          "                                              If the file already exists, its value will be validated and reused instead." << std::endl <<
                          "                                              This is useful in case the system has crashed and we want to reuse the value from before the crash." << std::endl;
-            std::cout << "    frltoggle load-file                       loads the value from file (e.g., saved using \"--save-previous\") and uses it to set FRL." << std::endl << 
+            std::cout << "    dlssfg-fps load-file                       loads the value from file (e.g., saved using \"--save-previous\") and uses it to set the target." << std::endl << 
                          "                                              File is removed afterwards if no errors occur." << std::endl;
             std::cout << std::endl;
             // clang-format on
@@ -244,7 +244,7 @@ int main(int argc, char** argv)
         const auto         update_value = [&](unsigned long fps_value)
         {
             drs_setting.u32CurrentValue = fps_value;
-            assertSuccess(nvapi.DRS_SetSetting(drs_session, drs_profile, &drs_setting), "Failed to set FRL setting!");
+            assertSuccess(nvapi.DRS_SetSetting(drs_session, drs_profile, &drs_setting), "Failed to set the setting!");
             assertSuccess(nvapi.DRS_SaveSettings(drs_session), "Failed to save session settings!");
         };
 
@@ -259,7 +259,7 @@ int main(int argc, char** argv)
             const auto status{nvapi.DRS_GetSetting(drs_session, drs_profile, 282018085, &drs_setting)};
             if (status != NVAPI_SETTING_NOT_FOUND)
             {
-                assertSuccess(status, "Failed to get FRL setting!");
+                assertSuccess(status, "Failed to get the setting!");
                 retrieved_value = drs_setting.u32CurrentValue;
             }
 
